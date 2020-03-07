@@ -4,39 +4,49 @@ using System.Text;
 
 namespace FavoriteThings.Critters
 {
+    public enum PetSpecies
+    {
+        Cat,
+        Dog,
+        Snake
+    }
+
     class Pets
     {
-        public string name;
-        public string kindOfPet;
-        public int age;
+        public string Name;
+        public PetSpecies KindOfPet;
+        public int Age;
         
-        public Pets(string petName, string petType, int currentAge)
+        public Pets(string petName, int currentAge, PetSpecies petType)
         {
-            age = currentAge;
-            kindOfPet = petType;
-            name = petName;
-        }
-
-        public enum petSpecies
-        {
-            Cat,
-            Dog,
-            Snake
+            Age = currentAge;
+            Name = petName;
+            KindOfPet = petType;
         }
 
         public void Birthday()
         {
-            age += 1;
-            Console.WriteLine($"{age} years old!  Happy Birthday {name}!!!");
+            Age += 1;
+            Console.WriteLine($"{Age} years old!  Happy Birthday {Name}!!!");
         }
 
         public void Speak()
         {
-            switch (kindOfPet)
+            switch (KindOfPet)
             {
-                case petSpecies.Cat.ToString():
-                    { 
+                case PetSpecies.Cat:
+                    {
                         Console.WriteLine("Meow");
+                        break;
+                    }
+                case PetSpecies.Dog:
+                    {
+                        Console.WriteLine("Woof");
+                        break;
+                    }
+                case PetSpecies.Snake:
+                    {
+                        Console.WriteLine("Hiss");
                         break;
                     }
                 default:

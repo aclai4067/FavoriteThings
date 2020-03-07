@@ -4,25 +4,28 @@ using System.Text;
 
 namespace FavoriteThings.Critters
 {
+    public enum Species
+    {
+        Parrot,
+        Kingfisher,
+        SongBird
+    }
+
     class Birds
     {
         private int _totalDistance;
-        public string state;
-         public enum species
-        {
-            Parrot,
-            Kingfisher,
-            SongBird
-        }
+        public string state { get; set; }
+        public Species Species { get; set; }
+        
 
-        public void Sing(species sp)
+        public void Sing(Species sp)
         {
             switch (sp)
             {
-                case species.Kingfisher:
+                case Species.Kingfisher:
                     Console.WriteLine("Laugh");
                     break;
-                case species.SongBird:
+                case Species.SongBird:
                     Console.WriteLine("Tweet");
                     break;
                 default:
