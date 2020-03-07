@@ -8,6 +8,7 @@ namespace FavoriteThings
     {
         static void Main(string[] args)
         {
+            // Birds
             var Kookaburra = new Birds();
             Kookaburra.state = "Queensland";
             Kookaburra.Sing(Species.Kingfisher);
@@ -20,6 +21,7 @@ namespace FavoriteThings
 
             Kookaburra.Fly(15);
 
+            // Pets
             var Tabby = new Pets("Bundaberg", 12, PetSpecies.Cat);
             Tabby.Birthday();
             Tabby.Speak();
@@ -28,6 +30,16 @@ namespace FavoriteThings
             Mutt.Birthday();
             Mutt.Speak();
 
+            // Movies
+            var HungerGames = new Movies("Hunger Games", Genre.Distopian);
+            HungerGames.Watch();
+            HungerGames.Rate(4.5m);
+
+            var WeddingCrashers = new Movies("Wedding Crashers", Genre.Comdey);
+            WeddingCrashers.Watch();
+            WeddingCrashers.Rate(4m);
+
+            // Books
             Console.ReadKey();
         }
     }
