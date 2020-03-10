@@ -30,7 +30,7 @@ namespace FavoriteThings.Media
         public void Read (int pages)
         {
             PagesRead += pages;
-            Console.WriteLine($"You have read {PagesRead} out of {PageLength} in {BookTitle}");
+            Console.WriteLine($"You have read {PagesRead} out of {PageLength} pages in {BookTitle}");
         }
 
         public void ChangeStatus()
