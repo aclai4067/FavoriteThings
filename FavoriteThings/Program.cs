@@ -26,7 +26,7 @@ namespace FavoriteThings
             Tabby.Birthday();
             Tabby.Speak();
 
-            var Mutt = new Pets("Murhy", 13, PetSpecies.Dog);
+            var Mutt = new Pets("Murphy", 13, PetSpecies.Dog);
             Mutt.Birthday();
             Mutt.Speak();
 
@@ -40,6 +40,15 @@ namespace FavoriteThings
             WeddingCrashers.Rate(4m);
 
             // Books
+            var MaryRoach = new Books("Bonk", Genre.Science, 280);
+            MaryRoach.Read(25);
+            MaryRoach.ChangeStatus();
+
+            var BillBryson = new Books("Down Under", Genre.Biography, 250);
+            BillBryson.Read(30);
+            BillBryson.ChangeStatus();
+            BillBryson.Read(23);
+
             Console.ReadKey();
         }
     }
