@@ -12,42 +12,40 @@ namespace FavoriteThings.Media
         Read
     }
 
-    class Books
+    class Books : MediaBase
     {
-        public Genre BookGenre { get; }
-        public string BookTitle { get; }
         public int PageLength { get; }
         public int PagesRead { get; set; }
         public Status BookStatus { get; set; }
 
         public Books(string title, Genre genre, int length)
         {
-            BookTitle = title;
-            BookGenre = genre;
+            Title = title;
+            Genre = genre;
             PageLength = length;
         }
 
         public void Read (int pages)
         {
             PagesRead += pages;
-            Console.WriteLine($"You have read {PagesRead} out of {PageLength} pages in {BookTitle}");
+            Console.WriteLine($"You have read {PagesRead} out of {PageLength} pages in {Title}");
         }
 
         public void ChangeStatus()
         {
-            Console.WriteLine($"Enter your status code for {BookTitle} (1 = Want to Read; 2 = Currently Reading; 3 = Gave Up Reading; 4 = Finished Reading)");
+            Console.WriteLine($"Enter your status code for {Title} (1 = Want to Read; 2 = Currently Reading; 3 = Gave Up Reading; 4 = Finished Reading)");
             var status = Int32.Parse(Console.ReadLine());
             BookStatus = (Status)status;
             switch (BookStatus)
             {
                 case Status.ToRead:
                     {
-                        Console.WriteLine($"You want to read {BookTitle}");
+                        Console.WriteLine($"You want to read {Title}");
                         break;
                     }
                 case Status.Reading:
                     {
-                        Console.WriteLine($"Enjoy reading {BookTitle}!");
+                        Console.WriteLine($"Enjoy reading {Title}!");
                         break;
                     }
                 case Status.GaveUp:
@@ -57,7 +55,7 @@ namespace FavoriteThings.Media
                     }
                 case Status.Read:
                     {
-                        Console.WriteLine($"Congrats! You finished {BookTitle}");
+                        Console.WriteLine($"Congrats! You finished {Title}");
                         break;
                     }
                 default:
